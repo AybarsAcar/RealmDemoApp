@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct RealmToDoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ToDoListView()
+  var body: some Scene {
+    WindowGroup {
+      ToDoListView()
+        .onAppear {
+          print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
+          
+          // suppress NavigationView warnings
+          UserDefaults.standard.setValue(false, forKeyPath: "_UIConstraintBasedLayoutLogUnsatisfiable")
         }
     }
+  }
 }

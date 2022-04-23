@@ -13,6 +13,7 @@ struct ToDoListView: View {
   @ObservedResults(ToDo.self) var toDos
   
   @State private var name = ""
+  @State private var searchFilter = ""
   @FocusState private var focus: Bool?
   
   var body: some View {
@@ -41,13 +42,26 @@ struct ToDoListView: View {
         .padding()
         
         List {
-          ForEach(toDos) { toDo in
-            Text(toDo.name)
+          ForEach(toDos.sorted(by: [
+            SortDescriptor(keyPath: "completed"),
+            SortDescriptor(keyPath: "urgency", ascending: false)
+          ])) { toDo in
+            ToDoListRow(toDo: toDo)
           }
+//          .onDelete { indexSet in
+//            $toDos.remove(atOffsets: indexSet)
+//          }
           .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .searchable(text: $searchFilter, collection: $toDos, keyPath: \.name) {
+          ForEach(toDos) { toDo in
+            Text(toDo.name)
+              .searchCompletion(toDo.name)
+          }
+        }
       }
+      .animation(.default, value: toDos)
       .navigationTitle("Realm ToDos")
     }
   }
