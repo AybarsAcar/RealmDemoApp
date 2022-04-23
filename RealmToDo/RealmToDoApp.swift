@@ -11,7 +11,7 @@ import SwiftUI
 struct RealmToDoApp: App {
   var body: some Scene {
     WindowGroup {
-      ToDoListView()
+      ContentView()
         .onAppear {
           print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
           

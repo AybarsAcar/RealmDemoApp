@@ -16,6 +16,12 @@
 		00F077FE281410AF00AA0AF3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 00F077FD281410AF00AA0AF3 /* RealmSwift */; };
 		00F078002814116500AA0AF3 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F077FF2814116500AA0AF3 /* ToDo.swift */; };
 		00F07803281416A000AA0AF3 /* ToDoListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F07802281416A000AA0AF3 /* ToDoListRow.swift */; };
+		00FBA2BE2814BE070059AB0E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBA2BD2814BE070059AB0E /* ContentView.swift */; };
+		00FBA2C22814BF080059AB0E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBA2C12814BF080059AB0E /* Country.swift */; };
+		00FBA2C42814BF760059AB0E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBA2C32814BF760059AB0E /* City.swift */; };
+		00FBA2C62814BFC20059AB0E /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBA2C52814BFC20059AB0E /* CountryListView.swift */; };
+		00FBA2C82814C1290059AB0E /* CountryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBA2C72814C1290059AB0E /* CountryRowView.swift */; };
+		00FBA2CA2814C5640059AB0E /* CitiesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBA2C92814C5640059AB0E /* CitiesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,12 @@
 		00F077F8281409D300AA0AF3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00F077FF2814116500AA0AF3 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		00F07802281416A000AA0AF3 /* ToDoListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListRow.swift; sourceTree = "<group>"; };
+		00FBA2BD2814BE070059AB0E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00FBA2C12814BF080059AB0E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		00FBA2C32814BF760059AB0E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		00FBA2C52814BFC20059AB0E /* CountryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListView.swift; sourceTree = "<group>"; };
+		00FBA2C72814C1290059AB0E /* CountryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowView.swift; sourceTree = "<group>"; };
+		00FBA2C92814C5640059AB0E /* CitiesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				00F077F8281409D300AA0AF3 /* LaunchScreen.storyboard */,
-				00F07802281416A000AA0AF3 /* ToDoListRow.swift */,
-				00F077EB2814093300AA0AF3 /* ToDoListView.swift */,
+				00FBA2BD2814BE070059AB0E /* ContentView.swift */,
+				00FBA2C02814BE170059AB0E /* CountryScreen */,
+				00FBA2BF2814BE0B0059AB0E /* ToDoScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,8 +105,29 @@
 			isa = PBXGroup;
 			children = (
 				00F077FF2814116500AA0AF3 /* ToDo.swift */,
+				00FBA2C12814BF080059AB0E /* Country.swift */,
+				00FBA2C32814BF760059AB0E /* City.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		00FBA2BF2814BE0B0059AB0E /* ToDoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				00F07802281416A000AA0AF3 /* ToDoListRow.swift */,
+				00F077EB2814093300AA0AF3 /* ToDoListView.swift */,
+			);
+			path = ToDoScreen;
+			sourceTree = "<group>";
+		};
+		00FBA2C02814BE170059AB0E /* CountryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				00FBA2C52814BFC20059AB0E /* CountryListView.swift */,
+				00FBA2C72814C1290059AB0E /* CountryRowView.swift */,
+				00FBA2C92814C5640059AB0E /* CitiesListView.swift */,
+			);
+			path = CountryScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +209,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F078002814116500AA0AF3 /* ToDo.swift in Sources */,
+				00FBA2BE2814BE070059AB0E /* ContentView.swift in Sources */,
 				00F077EC2814093300AA0AF3 /* ToDoListView.swift in Sources */,
+				00FBA2C62814BFC20059AB0E /* CountryListView.swift in Sources */,
 				00F07803281416A000AA0AF3 /* ToDoListRow.swift in Sources */,
+				00FBA2C82814C1290059AB0E /* CountryRowView.swift in Sources */,
+				00FBA2C22814BF080059AB0E /* Country.swift in Sources */,
+				00FBA2CA2814C5640059AB0E /* CitiesListView.swift in Sources */,
 				00F077EA2814093300AA0AF3 /* RealmToDoApp.swift in Sources */,
+				00FBA2C42814BF760059AB0E /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
