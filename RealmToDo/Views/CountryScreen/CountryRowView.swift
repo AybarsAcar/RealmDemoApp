@@ -14,8 +14,19 @@ struct CountryRowView: View {
   
   @FocusState var isFocused: Bool?
   
+  @State private var showFlagPicker = false
+  
   var body: some View {
     HStack {
+      
+      Button {
+        showFlagPicker = true
+      } label: {
+        Text(country.flag)
+      }
+      .buttonStyle(.plain)
+
+      
       TextField("New Country", text: $country.name)
         .focused($isFocused, equals: true)
         .textFieldStyle(.roundedBorder)
@@ -26,6 +37,9 @@ struct CountryRowView: View {
       
       Text("\(country.cities.count) cities")
         .font(.caption)
+    }
+    .sheet(isPresented: $showFlagPicker) {
+      FlagPicker(country: country)
     }
   }
 }

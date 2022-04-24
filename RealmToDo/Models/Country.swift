@@ -12,6 +12,7 @@ class Country: Object, ObjectKeyIdentifiable {
   @Persisted(primaryKey: true) var id: ObjectId
   @Persisted var name: String
   @Persisted var cities: List<City>
+  @Persisted var flag = "🏳"
   
   convenience init(name: String) {
     self.init()

@@ -14,6 +14,8 @@ struct CountryListView: View {
   
   @FocusState private var isFocused: Bool?
   
+  @State private var presentAlert = false
+  
   var body: some View {
     NavigationView {
       VStack {
@@ -28,6 +30,9 @@ struct CountryListView: View {
               } label: {
                 CountryRowView(country: country, isFocused: _isFocused)
               }
+            }
+            .onDelete { indexSet in
+              deleteCountry(indexSet: indexSet)
             }
             .listRowSeparator(.hidden)
           }
@@ -61,6 +66,27 @@ struct CountryListView: View {
         }
       }
     }
+    .alert("You must first delete all of the cities in the country", isPresented: $presentAlert) {
+    }
+  }
+}
+
+// MARK: - Methods
+extension CountryListView {
+  
+  /// deletes a country based on the indexset on a given sorted array
+  /// deletes only if there are no cities in the country
+  private func deleteCountry(indexSet: IndexSet) {
+    guard let index = indexSet.first else { return }
+    
+    let selectedCountry = Array(countries.sorted(byKeyPath: "name"))[index]
+    
+    guard selectedCountry.cities.isEmpty else {
+      presentAlert.toggle()
+      return
+    }
+    
+    $countries.remove(selectedCountry)
   }
 }
 

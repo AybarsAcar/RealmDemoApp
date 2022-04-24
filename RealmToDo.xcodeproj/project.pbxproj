@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008B0C0D2815594C0050453C /* AllCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C0C2815594C0050453C /* AllCitiesView.swift */; };
+		008B0C1028155AB30050453C /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C0F28155AB30050453C /* MigrationManager.swift */; };
+		008B0C1228155C8C0050453C /* CountryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C1128155C8C0050453C /* CountryInfo.swift */; };
+		008B0C1428155CD80050453C /* FlagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C1328155CD80050453C /* FlagPicker.swift */; };
 		00F077EA2814093300AA0AF3 /* RealmToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F077E92814093300AA0AF3 /* RealmToDoApp.swift */; };
 		00F077EC2814093300AA0AF3 /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F077EB2814093300AA0AF3 /* ToDoListView.swift */; };
 		00F077EE2814093500AA0AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F077ED2814093500AA0AF3 /* Assets.xcassets */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		008B0C0C2815594C0050453C /* AllCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCitiesView.swift; sourceTree = "<group>"; };
+		008B0C0F28155AB30050453C /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
+		008B0C1128155C8C0050453C /* CountryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfo.swift; sourceTree = "<group>"; };
+		008B0C1328155CD80050453C /* FlagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPicker.swift; sourceTree = "<group>"; };
 		00F077E62814093300AA0AF3 /* RealmToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F077E92814093300AA0AF3 /* RealmToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmToDoApp.swift; sourceTree = "<group>"; };
 		00F077EB2814093300AA0AF3 /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
@@ -54,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		008B0C0E28155AA70050453C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				008B0C0F28155AB30050453C /* MigrationManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		00F077DD2814093300AA0AF3 = {
 			isa = PBXGroup;
 			children = (
@@ -74,9 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				00F077E92814093300AA0AF3 /* RealmToDoApp.swift */,
-				00F078012814168E00AA0AF3 /* Models */,
 				00F077ED2814093500AA0AF3 /* Assets.xcassets */,
+				00F078012814168E00AA0AF3 /* Models */,
 				00F077EF2814093500AA0AF3 /* Preview Content */,
+				008B0C0E28155AA70050453C /* Utils */,
 				00F077F7281409C700AA0AF3 /* Views */,
 			);
 			path = RealmToDo;
@@ -107,6 +124,7 @@
 				00F077FF2814116500AA0AF3 /* ToDo.swift */,
 				00FBA2C12814BF080059AB0E /* Country.swift */,
 				00FBA2C32814BF760059AB0E /* City.swift */,
+				008B0C1128155C8C0050453C /* CountryInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +144,8 @@
 				00FBA2C52814BFC20059AB0E /* CountryListView.swift */,
 				00FBA2C72814C1290059AB0E /* CountryRowView.swift */,
 				00FBA2C92814C5640059AB0E /* CitiesListView.swift */,
+				008B0C0C2815594C0050453C /* AllCitiesView.swift */,
+				008B0C1328155CD80050453C /* FlagPicker.swift */,
 			);
 			path = CountryScreen;
 			sourceTree = "<group>";
@@ -209,14 +229,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F078002814116500AA0AF3 /* ToDo.swift in Sources */,
+				008B0C0D2815594C0050453C /* AllCitiesView.swift in Sources */,
+				008B0C1228155C8C0050453C /* CountryInfo.swift in Sources */,
 				00FBA2BE2814BE070059AB0E /* ContentView.swift in Sources */,
 				00F077EC2814093300AA0AF3 /* ToDoListView.swift in Sources */,
 				00FBA2C62814BFC20059AB0E /* CountryListView.swift in Sources */,
 				00F07803281416A000AA0AF3 /* ToDoListRow.swift in Sources */,
+				008B0C1428155CD80050453C /* FlagPicker.swift in Sources */,
 				00FBA2C82814C1290059AB0E /* CountryRowView.swift in Sources */,
 				00FBA2C22814BF080059AB0E /* Country.swift in Sources */,
 				00FBA2CA2814C5640059AB0E /* CitiesListView.swift in Sources */,
 				00F077EA2814093300AA0AF3 /* RealmToDoApp.swift in Sources */,
+				008B0C1028155AB30050453C /* MigrationManager.swift in Sources */,
 				00FBA2C42814BF760059AB0E /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

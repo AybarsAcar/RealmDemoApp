@@ -9,6 +9,13 @@ import SwiftUI
 
 @main
 struct RealmToDoApp: App {
+  
+  let migrator: MigrationManager
+  
+  init() {
+    migrator = MigrationManager()
+  }
+  
   var body: some Scene {
     WindowGroup {
       ContentView()

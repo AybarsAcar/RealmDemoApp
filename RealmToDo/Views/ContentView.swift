@@ -21,6 +21,12 @@ struct ContentView: View {
           Image(systemName: "globe.asia.australia")
           Text("Countries")
         }
+      
+      AllCitiesView()
+        .tabItem {
+          Image(systemName: "building.2.crop.circle")
+          Text("All Cities")
+        }
     }
   }
 }
