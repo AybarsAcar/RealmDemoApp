@@ -19,7 +19,10 @@ struct AllCitiesView: View {
           HStack {
             Text(city.name)
             Spacer()
-            Text(city.country.first?.name ?? "N/A")
+            if let country = city.country.first {
+              Text(country.flag)
+              Text(country.name)
+            }
           }
         }
         .onDelete(perform: $cities.remove)

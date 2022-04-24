@@ -10,18 +10,14 @@ import SwiftUI
 @main
 struct RealmToDoApp: App {
   
-  let migrator: MigrationManager
+  @StateObject private var manager = RealmManager(name: "example3")
   
-  init() {
-    migrator = MigrationManager()
-  }
   
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environmentObject(manager)
         .onAppear {
-          print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path)
-          
           // suppress NavigationView warnings
           UserDefaults.standard.setValue(false, forKeyPath: "_UIConstraintBasedLayoutLogUnsatisfiable")
         }

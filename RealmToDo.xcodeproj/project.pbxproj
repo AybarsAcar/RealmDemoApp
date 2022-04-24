@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		008B0C0D2815594C0050453C /* AllCitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C0C2815594C0050453C /* AllCitiesView.swift */; };
-		008B0C1028155AB30050453C /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C0F28155AB30050453C /* MigrationManager.swift */; };
+		008B0C1028155AB30050453C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C0F28155AB30050453C /* RealmManager.swift */; };
 		008B0C1228155C8C0050453C /* CountryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C1128155C8C0050453C /* CountryInfo.swift */; };
 		008B0C1428155CD80050453C /* FlagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008B0C1328155CD80050453C /* FlagPicker.swift */; };
 		00F077EA2814093300AA0AF3 /* RealmToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F077E92814093300AA0AF3 /* RealmToDoApp.swift */; };
@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		008B0C0C2815594C0050453C /* AllCitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCitiesView.swift; sourceTree = "<group>"; };
-		008B0C0F28155AB30050453C /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
+		008B0C0F28155AB30050453C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		008B0C1128155C8C0050453C /* CountryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfo.swift; sourceTree = "<group>"; };
 		008B0C1328155CD80050453C /* FlagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagPicker.swift; sourceTree = "<group>"; };
 		00F077E62814093300AA0AF3 /* RealmToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +65,7 @@
 		008B0C0E28155AA70050453C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				008B0C0F28155AB30050453C /* MigrationManager.swift */,
+				008B0C0F28155AB30050453C /* RealmManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 				00FBA2C22814BF080059AB0E /* Country.swift in Sources */,
 				00FBA2CA2814C5640059AB0E /* CitiesListView.swift in Sources */,
 				00F077EA2814093300AA0AF3 /* RealmToDoApp.swift in Sources */,
-				008B0C1028155AB30050453C /* MigrationManager.swift in Sources */,
+				008B0C1028155AB30050453C /* RealmManager.swift in Sources */,
 				00FBA2C42814BF760059AB0E /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

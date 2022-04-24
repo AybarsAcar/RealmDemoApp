@@ -9,44 +9,55 @@ import SwiftUI
 import RealmSwift
 
 struct CountryListView: View {
-  
-  @ObservedResults(Country.self) var countries
+
+  @EnvironmentObject var realmManager: RealmManager
   
   @FocusState private var isFocused: Bool?
-  
-  @State private var presentAlert = false
   
   var body: some View {
     NavigationView {
       VStack {
-        if countries.isEmpty {
-          Text("Tap on the \(Image(systemName: "plus.circle.fill")) button above to create a new Country.")
-        }
-        else {
-          List {
-            ForEach(countries.sorted(byKeyPath: "name")) { country in
-              NavigationLink {
-                CitiesListView(country: country)
-              } label: {
-                CountryRowView(country: country, isFocused: _isFocused)
+        
+        if let countries = realmManager.searchResults {
+          if countries.isEmpty {
+            Text("Tap on the \(Image(systemName: "plus.circle.fill")) button above to create a new Country.")
+          }
+          else {
+            List {
+              ForEach(countries.sorted { $0.name < $1.name }) { country in
+                
+                if !country.isInvalidated {
+                  NavigationLink {
+                    CitiesListView(country: country)
+                  } label: {
+                    CountryRowView(country: country, isFocused: _isFocused)
+                  }
+                }
+           
+              }
+              .onDelete { indexSet in
+                deleteCountry(indexSet: indexSet)
+              }
+              .listRowSeparator(.hidden)
+            }
+            .listStyle(.plain)
+            .searchable(text: $realmManager.searchFilter, placement: .navigationBarDrawer(displayMode: .always)) {
+              ForEach(countries) { country in
+                Text(country.name)
+                  .searchCompletion(country.name)
               }
             }
-            .onDelete { indexSet in
-              deleteCountry(indexSet: indexSet)
-            }
-            .listRowSeparator(.hidden)
           }
-          .listStyle(.plain)
         }
         
         Spacer()
       }
-      .animation(.easeIn, value: countries)
+      .animation(.easeIn, value: realmManager.countries)
       .navigationBarTitle("Countries")
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {
           Button {
-            $countries.append(Country())
+            realmManager.add(country: Country())
           } label: {
             Image(systemName: "plus.circle.fill")
               .font(.title2)
@@ -66,8 +77,6 @@ struct CountryListView: View {
         }
       }
     }
-    .alert("You must first delete all of the cities in the country", isPresented: $presentAlert) {
-    }
   }
 }
 
@@ -75,23 +84,20 @@ struct CountryListView: View {
 extension CountryListView {
   
   /// deletes a country based on the indexset on a given sorted array
-  /// deletes only if there are no cities in the country
+  /// delete on cascade
   private func deleteCountry(indexSet: IndexSet) {
     guard let index = indexSet.first else { return }
     
-    let selectedCountry = Array(countries.sorted(byKeyPath: "name"))[index]
+    let selectedCountry = realmManager.countriesArray.sorted { $0.name < $1.name }[index]
     
-    guard selectedCountry.cities.isEmpty else {
-      presentAlert.toggle()
-      return
-    }
-    
-    $countries.remove(selectedCountry)
+    realmManager.deleteCities(for: selectedCountry)
+    realmManager.remove(country: selectedCountry)
   }
 }
 
 struct CountryListView_Previews: PreviewProvider {
   static var previews: some View {
     CountryListView()
+      .environmentObject(RealmManager(name: "sample"))
   }
 }

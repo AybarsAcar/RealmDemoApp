@@ -25,11 +25,12 @@ struct CountryRowView: View {
         Text(country.flag)
       }
       .buttonStyle(.plain)
-
+      
       
       TextField("New Country", text: $country.name)
         .focused($isFocused, equals: true)
         .textFieldStyle(.roundedBorder)
+        .autocapitalization(.none)
         .padding()
         .frame(height: 30)
       
